@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | BOOM</title>
+  <title>HashMap和HashTable以及HashSet | BOOM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="BOOM">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="目录  [TOC] ##HashMap和Hashtable的区别1.俩者的区别主要在于Hashtable是线程安全，HashMap则非线程安全。Hashtable的实现方法都添加了synchronized关键字来确保线程同步，因此性能相对来说高些，无特殊要求一般使用HashMap。在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HashMap和HashTable以及HashSet">
+<meta property="og:url" content="http://yoursite.com/2017/09/06/HashMap和HashTable以及HashSet/index.html">
 <meta property="og:site_name" content="BOOM">
+<meta property="og:description" content="目录  [TOC] ##HashMap和Hashtable的区别1.俩者的区别主要在于Hashtable是线程安全，HashMap则非线程安全。Hashtable的实现方法都添加了synchronized关键字来确保线程同步，因此性能相对来说高些，无特殊要求一般使用HashMap。在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.blog.csdn.net/20170828102313354?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170828102152710?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170828102218649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170828095120444?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170828095653403?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170828145441625?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-09-06T06:25:56.894Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BOOM">
+<meta name="twitter:title" content="HashMap和HashTable以及HashSet">
+<meta name="twitter:description" content="目录  [TOC] ##HashMap和Hashtable的区别1.俩者的区别主要在于Hashtable是线程安全，HashMap则非线程安全。Hashtable的实现方法都添加了synchronized关键字来确保线程同步，因此性能相对来说高些，无特殊要求一般使用HashMap。在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170828102313354?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="BOOM" type="application/atom+xml">
   
@@ -128,103 +139,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-HashMap和HashTable以及HashSet" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      HashMap和HashTable以及HashSet
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/06/HashMap和HashTable以及HashSet/" class="archive-article-date">
+
+        
+        <a href="/2017/09/06/HashMap和HashTable以及HashSet/" class="archive-article-date">
   	<time datetime="2017-09-06T06:25:15.209Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/06/HashMap和HashTable以及HashSet/">HashMap和HashTable以及HashSet</a>
-    </h1>
-  
+        
+      </header>
+    
 
-        <div class="article-info info-on-right">
-          
-          
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>目录 </strong></p>
+<p>[TOC]</p>
+<p>##HashMap和Hashtable的区别<br><strong>1.俩者的区别主要在于Hashtable是线程安全，HashMap则非线程安全。</strong><br>Hashtable的实现方法都添加了synchronized关键字来确保线程同步，因此性能相对来说高些，无特殊要求一般使用HashMap。在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程安全的集合（Collections.synchronizedMap()实现原理是Collections定义了一个SynchronizedMap的内部类，这个类实现了Map接口，在调用方法时使用synchronized来保证线程同步,当然了实际上操作的还是我们传入的HashMap实例，简单的说就是Collections.synchronizedMap()方法帮我们在操作HashMap时自动添加了synchronized来实现线程同步，类似的其它Collections.synchronizedXX方法也是类似原理）</p>
+<p>2.HashMap可以使用null值做为key，而Hashtable不允许null做为key，虽然HashMap可以用null做为key，但是不建议这么做，避免带来不必要的麻烦。HashMap以null做为key的时候，总是存储在table数组的第一个节点。</p>
+<p>3.HashMap是对Map接口的是实现，而Hashtable是实现了Map的接口和Dictionary的抽象类。<br><img src="http://img.blog.csdn.net/20170828102313354?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>4.Has和Map的出示容量为16，Hashtable的出示容量为11，俩者的填充因子默认为0.75<br><img src="http://img.blog.csdn.net/20170828102152710?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><img src="http://img.blog.csdn.net/20170828102218649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>5.俩者计算hash的方式不同<br>HashMap计算hash对key的hashcode进行了二次hash，以获得更好的散列值，然后对table数组长度取摸<br><img src="http://img.blog.csdn.net/20170828095120444?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>Hashtable计算hash是直接使用key的hashcode对table数组的长度直接进行取模<br><img src="http://img.blog.csdn.net/20170828095653403?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>6.俩者的底层实现都是数组加链表结构实现。</p>
+<p>##HashSet和HashMap、Hashtable的区别</p>
+<p>查看源码。Hashset内部就是用HashMap实现的，只不过HashSet里面的HashMap所有的value都是同一个Object而已，因此HashSet也是非线程安全的，至于HashSet和Hashtable的区别，HashSet就是个简化的HashMap的，所以你懂的<br>主要的几个实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">private transient HashMap&lt;E,Object&gt; map;</div><div class="line"></div><div class="line"> private static final Object PRESENT = new Object();</div><div class="line"> </div><div class="line"> public HashSet() &#123;</div><div class="line">   map = new HashMap&lt;E,Object&gt;();</div><div class="line">   &#125;</div><div class="line">public boolean contains(Object o) &#123;</div><div class="line">   return map.containsKey(o);</div><div class="line">   &#125;</div><div class="line">public boolean add(E e) &#123;</div><div class="line">   return map.put(e, PRESENT)==null;</div><div class="line">   &#125;</div><div class="line">public boolean add(E e) &#123;</div><div class="line">   return map.put(e, PRESENT)==null;</div><div class="line">   &#125;</div><div class="line">public boolean remove(Object o) &#123;</div><div class="line">   return map.remove(o)==PRESENT;</div><div class="line">   &#125;</div><div class="line"></div><div class="line"></div><div class="line">public void clear() &#123;</div><div class="line">   map.clear();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>##HashMap和Hashtable的实现原理<br>HashMap和Hashtable的底层实现都是数组+链表结构实现的，这点上完全一致</p>
+<p>添加、删除、获取元素时都是先计算hash，根据hash和table.length计算index也就是table数组的下标，然后进行相应操作，下面以HashMap为例说明下它的简单实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"> /**</div><div class="line"> * HashMap的默认初始容量 必须为2的n次幂。因为计算机进行2次幂的运算</div><div class="line"> * * , 仅通过位移操作就可以完成2的N次幂的运算</div><div class="line"> */</div><div class="line">static final int DEFAULT_INITIAL_CAPACITY = 16;</div><div class="line"></div><div class="line">/**</div><div class="line"> * HashMap的最大容量，可以认为是int的最大值    </div><div class="line"> */</div><div class="line">static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 默认的加载因子</div><div class="line"> */</div><div class="line">static final float DEFAULT_LOAD_FACTOR = 0.75f;</div><div class="line"></div><div class="line">/**</div><div class="line"> * HashMap用来存储数据的数组</div><div class="line"> */</div><div class="line">transient Entry[] table;</div></pre></td></tr></table></figure>
+<ul>
+<li>HashMap的创建<br>HashMap默认初始化时会创建一个默认容量为16的Entry数组，默认加载因子为0.75，同时设置临界值为16*0.75</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public HashMap(int initialCapacity, float loadFactor) &#123;</div><div class="line">       if (initialCapacity &lt; 0)</div><div class="line">           throw new IllegalArgumentException(&quot;Illegal initial capacity: &quot; +</div><div class="line">                                              initialCapacity);</div><div class="line">       if (initialCapacity &gt; MAXIMUM_CAPACITY)</div><div class="line">           initialCapacity = MAXIMUM_CAPACITY;</div><div class="line">       if (loadFactor &lt;= 0 || Float.isNaN(loadFactor))</div><div class="line">           throw new IllegalArgumentException(&quot;Illegal load factor: &quot; +</div><div class="line">                                              loadFactor);</div><div class="line"></div><div class="line">       // Find a power of 2 &gt;= initialCapacity</div><div class="line">       int capacity = 1;</div><div class="line">       while (capacity &lt; initialCapacity)</div><div class="line">           capacity &lt;&lt;= 1;//该代码的意思是，实际的开辟的空间要大于传入的第一个参数的值</div><div class="line"></div><div class="line">       this.loadFactor = loadFactor;</div><div class="line">       threshold = (int)Math.min(capacity * loadFactor, MAXIMUM_CAPACITY + 1);</div><div class="line">       table = new Entry[capacity];</div><div class="line">       useAltHashing = sun.misc.VM.isBooted() &amp;&amp;</div><div class="line">               (capacity &gt;= Holder.ALTERNATIVE_HASHING_THRESHOLD);</div><div class="line">       init();</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p><strong>了解具体实现方法前，我们先来看下 hash和indexFor</strong></p>
+<ul>
+<li>hash<br>hash方法是对hashcode进行二次散列，以获得更好的散列值</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20170828145441625?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">final int hash(Object k) &#123;</div><div class="line">        int h = 0;</div><div class="line">        if (useAltHashing) &#123;</div><div class="line">            if (k instanceof String) &#123;</div><div class="line">                return sun.misc.Hashing.stringHash32((String) k);</div><div class="line">            &#125;</div><div class="line">            h = hashSeed;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        h ^= k.hashCode();</div><div class="line"></div><div class="line">        // This function ensures that hashCodes that differ only by</div><div class="line">        // constant multiples at each bit position have a bounded</div><div class="line">        // number of collisions (approximately 8 at default load factor).</div><div class="line">        h ^= (h &gt;&gt;&gt; 20) ^ (h &gt;&gt;&gt; 12);</div><div class="line">        return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>indexFor</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">static int indexFor(int h, int length) &#123;</div><div class="line">   return h &amp; (length-1);//这里的相当于h%length,求得index也就是数组的下标</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>put方法<br>HashMap会对null值key进行特殊处理，总是放到table[0]位置<br>put过程是先计算hash然后通过hash与table.length取摸计算index值，然后将key放到table[index]位置，当table[index]已存在其它元素时，会在table[index]位置形成一个链表，将新添加的元素放在table[index]，原来的元素通过Entry的next进行链接，这样以链表形式解决hash冲突问题，当元素数量达到临界值(capactiy<em>factor)时，则进行扩容，是table数组长度变为table.length</em>2</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public V put(K key, V value) &#123;</div><div class="line">        if (key == null)</div><div class="line">            return putForNullKey(value);//处理null值，将值放在table[0]处理</div><div class="line">        int hash = hash(key);//计算hash</div><div class="line">        int i = indexFor(hash, table.length);//计算在数组中的存储位置</div><div class="line">         //遍历table[i]位置的链表，查找相同的key，若找到则使用新的value替换掉原来的oldValue并返回oldValue</div><div class="line">        for (Entry&lt;K,V&gt; e = table[i]; e != null; e = e.next) &#123;</div><div class="line">            Object k;</div><div class="line">            if (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) &#123;</div><div class="line">                V oldValue = e.value;</div><div class="line">                e.value = value;</div><div class="line">                e.recordAccess(this);</div><div class="line">                return oldValue;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">//若没有在table[i]位置找到相同的key，则添加key到table[i]位置，新的元素总是在table[i]位置的第一个元素，原来的元素后移</div><div class="line">        modCount++;</div><div class="line">        addEntry(hash, key, value, i);</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line">     void addEntry(int hash, K key, V value, int bucketIndex) &#123;</div><div class="line">       //判断元素个数是否达到了临界值，若已达到临界值则扩容，table长度翻倍</div><div class="line">        if ((size &gt;= threshold) &amp;&amp; (null != table[bucketIndex])) &#123;</div><div class="line">            resize(2 * table.length);</div><div class="line">            hash = (null != key) ? hash(key) : 0;</div><div class="line">            bucketIndex = indexFor(hash, table.length);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        createEntry(hash, key, value, bucketIndex);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>get方法<br>同样当key为null时会进行特殊处理，在table[0]的链表上查找key为null的元素<br>get的过程是先计算hash然后通过hash与table.length取摸计算index值，然后遍历table[index]上的链表，直到找到key，然后返回</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public V get(Object key) &#123;</div><div class="line">       if (key == null)</div><div class="line">           return getForNullKey();//为null进行处理</div><div class="line">       Entry&lt;K,V&gt; entry = getEntry(key);</div><div class="line"></div><div class="line">       return null == entry ? null : entry.getValue();</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">    final Entry&lt;K,V&gt; getEntry(Object key) &#123;</div><div class="line">       int hash = (key == null) ? 0 : hash(key);//计算hash</div><div class="line">        //在table[index]遍历查找key，若找到则返回value，找不到返回null</div><div class="line">       for (Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];</div><div class="line">            e != null;</div><div class="line">            e = e.next) &#123;</div><div class="line">           Object k;</div><div class="line">           if (e.hash == hash &amp;&amp;</div><div class="line">               ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))</div><div class="line">               return e;</div><div class="line">       &#125;</div><div class="line">       return null;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>remove方法<br>remove方法和put get类似，计算hash，计算index，然后遍历查找，将找到的元素从table[index]链表移除</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">final Entry&lt;K,V&gt; removeEntryForKey(Object key) &#123;</div><div class="line">        int hash = (key == null) ? 0 : hash(key);</div><div class="line">        int i = indexFor(hash, table.length);</div><div class="line">        Entry&lt;K,V&gt; prev = table[i];</div><div class="line">        Entry&lt;K,V&gt; e = prev;</div><div class="line"></div><div class="line">        while (e != null) &#123;</div><div class="line">            Entry&lt;K,V&gt; next = e.next;</div><div class="line">            Object k;</div><div class="line">            if (e.hash == hash &amp;&amp;</div><div class="line">                ((k = e.key) == key || (key != null &amp;&amp; key.equals(k)))) &#123;</div><div class="line">                modCount++;</div><div class="line">                size--;</div><div class="line">                if (prev == e)</div><div class="line">                    table[i] = next;</div><div class="line">                else</div><div class="line">                    prev.next = next;</div><div class="line">                e.recordRemoval(this);</div><div class="line">                return e;</div><div class="line">            &#125;</div><div class="line">            prev = e;</div><div class="line">            e = next;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return e;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>resize方法<br>resize方法在hashmap中并没有公开，这个方法实现了非常重要的hashmap扩容，具体过程为：先创建一个容量为table.length<em>2的新table，修改临界值，然后把table里面元素计算hash值并使用hash与table.length</em>2重新计算index放入到新的table里面<br>这里需要注意下是用每个元素的hash全部重新计算index，而不是简单的把原table对应index位置元素简单的移动到新table对应位置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">void resize(int newCapacity) &#123;</div><div class="line">        Entry[] oldTable = table;</div><div class="line">        int oldCapacity = oldTable.length;</div><div class="line">        if (oldCapacity == MAXIMUM_CAPACITY) &#123;</div><div class="line">            threshold = Integer.MAX_VALUE;</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        Entry[] newTable = new Entry[newCapacity];</div><div class="line">        transfer(newTable);</div><div class="line">        table = newTable;</div><div class="line">        threshold = (int)(newCapacity * loadFactor);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void transfer(Entry[] newTable) &#123;</div><div class="line">        Entry[] src = table;</div><div class="line">        int newCapacity = newTable.length;</div><div class="line">        for (int j = 0; j &lt; src.length; j++) &#123;</div><div class="line">            Entry&lt;K,V&gt; e = src[j];</div><div class="line">            if (e != null) &#123;</div><div class="line">                src[j] = null;        </div><div class="line">                do &#123;</div><div class="line">                    Entry&lt;K,V&gt; next = e.next;</div><div class="line">                    //重新对每个元素计算index</div><div class="line">                    int i = indexFor(e.hash, newCapacity);</div><div class="line">                    e.next = newTable[i];</div><div class="line">                    newTable[i] = e;</div><div class="line">                    e = next;</div><div class="line">                &#125; while (e != null);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>clear()方法<br>clear方法非常简单，就是遍历table然后把每个位置的值为null，同时修改元素个数为0<br>需要注意的是clear方法只会清楚里面的元素，并不会重置capactiy</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public void clear() &#123;</div><div class="line">       modCount++;</div><div class="line">       Entry[] tab = table;</div><div class="line">       for (int i = 0; i &lt; tab.length; i++)</div><div class="line">           tab[i] = null;</div><div class="line">       size = 0;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>containsKey和containsValue<br>containsKey方法是先计算hash然后使用hash和table.length取摸得到index值，遍历table[index]元素查找是否包含key相同的值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public boolean containsKey(Object key) &#123;</div><div class="line">        return getEntry(key) != null;</div><div class="line">    &#125;</div><div class="line">final Entry&lt;K,V&gt; getEntry(Object key) &#123;</div><div class="line">      int hash = (key == null) ? 0 : hash(key);</div><div class="line">      for (Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];</div><div class="line">           e != null;</div><div class="line">           e = e.next) &#123;</div><div class="line">          Object k;</div><div class="line">          if (e.hash == hash &amp;&amp;</div><div class="line">              ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))</div><div class="line">              return e;</div><div class="line">      &#125;</div><div class="line">      return null;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>containsValue方法就比较粗暴了，就是直接遍历所有元素直到找到value，由此可见HashMap的containsValue方法本质上和普通数组和list的contains方法没什么区别，你别指望它会像containsKey那么高效</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public boolean containsValue(Object value) &#123;</div><div class="line">       if (value == null)</div><div class="line">           return containsNullValue();</div><div class="line"></div><div class="line">       Entry[] tab = table;</div><div class="line">       for (int i = 0; i &lt; tab.length ; i++)</div><div class="line">           for (Entry e = tab[i] ; e != null ; e = e.next)</div><div class="line">               if (value.equals(e.value))</div><div class="line">                   return true;</div><div class="line">       return false;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>参考博客：<a href="http://www.cnblogs.com/lzrabbit/p/3721067.html#h1" target="_blank" rel="external">http://www.cnblogs.com/lzrabbit/p/3721067.html#h1</a></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/06/HashMap和HashTable以及HashSet/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/06/利用新版Spring roo生成数据库表/" class="archive-article-date">
-  	<time datetime="2017-09-06T01:39:17.367Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/06/利用新版Spring roo生成数据库表/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用新版Spring roo生成数据库表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/06/利用新版Spring roo生成数据库表/">利用新版Spring roo生成数据库表</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/01/hello-world/" class="archive-article-date">
-  	<time datetime="2017-09-01T07:35:22.147Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/01/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -247,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
