@@ -174,12 +174,6 @@
       
         <h2 id="HashMap和Hashtable的区别"><a href="#HashMap和Hashtable的区别" class="headerlink" title="HashMap和Hashtable的区别"></a>HashMap和Hashtable的区别</h2><p><strong>1.俩者的区别主要在于Hashtable是线程安全，HashMap则非线程安全。</strong><br>Hashtable的实现方法都添加了synchronized关键字来确保线程同步，因此性能相对来说高些，无特殊要求一般使用HashMap。在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程安全的集合（Collections.synchronizedMap()实现原理是Collections定义了一个SynchronizedMap的内部类，这个类实现了Map接口，在调用方法时使用synchronized来保证线程同步,当然了实际上操作的还是我们传入的HashMap实例，简单的说就是Collections.synchronizedMap()方法帮我们在操作HashMap时自动添加了synchronized来实现线程同步，类似的其它Collections.synchronizedXX方法也是类似原理）</p>
 <p>2.HashMap可以使用null值做为key，而Hashtable不允许null做为key，虽然HashMap可以用null做为key，但是不建议这么做，避免带来不必要的麻烦。HashMap以null做为key的时候，总是存储在table数组的第一个节点。</p>
-<p>3.HashMap是对Map接口的是实现，而Hashtable是实现了Map的接口和Dictionary的抽象类。<br><img src="http://img.blog.csdn.net/20170828102313354?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>4.Has和Map的出示容量为16，Hashtable的出示容量为11，俩者的填充因子默认为0.75<br><img src="http://img.blog.csdn.net/20170828102152710?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><img src="http://img.blog.csdn.net/20170828102218649?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>5.俩者计算hash的方式不同<br>HashMap计算hash对key的hashcode进行了二次hash，以获得更好的散列值，然后对table数组长度取摸<br><img src="http://img.blog.csdn.net/20170828095120444?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>Hashtable计算hash是直接使用key的hashcode对table数组的长度直接进行取模<br><img src="http://img.blog.csdn.net/20170828095653403?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>6.俩者的底层实现都是数组加链表结构实现。</p>
-<h2 id="HashSet和HashMap、Hashtable的区别"><a href="#HashSet和HashMap、Hashtable的区别" class="headerlink" title="HashSet和HashMap、Hashtable的区别"></a>HashSet和HashMap、Hashtable的区别</h2>
         
           <a class="article-more-a" href="/2017/09/06/HashMap和HashTable以及HashSet/#more">more >></a>
         
@@ -250,12 +244,7 @@
 <p>3.数据库 我是MYSQL，ORACLE 也可以，其他数据库可不可以可以参照官方文档。</p>
 <h2 id="二-配置生产环境"><a href="#二-配置生产环境" class="headerlink" title="二.配置生产环境"></a>二.配置生产环境</h2><p><strong>1.安装maven</strong></p>
 <p><img src="http://img.blog.csdn.net/20170830110917542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p><strong>检测是否成功</strong></p>
-<p><img src="http://img.blog.csdn.net/20170830110717521?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p><strong>2.安装spring roo</strong></p>
-<p><img src="http://img.blog.csdn.net/20170830111021246?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>检测是否安装成功</p>
-<p><img src="http://img.blog.csdn.net/20170830111108242?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p><strong>检测是否成功</strong><br>
         
           <a class="article-more-a" href="/2017/09/06/利用新版Spring roo生成数据库表/#more">more >></a>
         
