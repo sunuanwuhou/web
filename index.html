@@ -170,10 +170,6 @@
         
       </header>
     
-	
-	<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="HashMap和Hashtable的区别"><a href="#HashMap和Hashtable的区别" class="headerlink" title="HashMap和Hashtable的区别"></a>HashMap和Hashtable的区别</h2><p><strong>1.俩者的区别主要在于Hashtable是线程安全，HashMap则非线程安全。</strong><br>Hashtable的实现方法都添加了synchronized关键字来确保线程同步，因此性能相对来说高些，无特殊要求一般使用HashMap。在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程安全的集合（Collections.synchronizedMap()实现原理是Collections定义了一个SynchronizedMap的内部类，这个类实现了Map接口，在调用方法时使用synchronized来保证线程同步,当然了实际上操作的还是我们传入的HashMap实例，简单的说就是Collections.synchronizedMap()方法帮我们在操作HashMap时自动添加了synchronized来实现线程同步，类似的其它Collections.synchronizedXX方法也是类似原理）</p>
@@ -240,10 +236,6 @@
         
       </header>
     
-	
-	<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <p>源代码：<a href="https://github.com/sunuanwuhou/Northwind" target="_blank" rel="external">https://github.com/sunuanwuhou/Northwind</a> </p>
@@ -312,10 +304,6 @@
         
       </header>
     
-	
-	<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
