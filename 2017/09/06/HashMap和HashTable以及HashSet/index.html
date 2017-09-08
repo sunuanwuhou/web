@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20170828095120444?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170828095653403?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170828145441625?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-09-07T01:13:40.475Z">
+<meta property="og:updated_time" content="2017-09-08T03:11:55.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap和HashTable以及HashSet">
 <meta name="twitter:description" content="HashMap和Hashtable的区别1.俩者的区别主要在于Hashtable是线程安全，HashMap则非线程安全。Hashtable的实现方法都添加了synchronized关键字来确保线程同步，因此性能相对来说高些，无特殊要求一般使用HashMap。在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程安全的集合（Collec">
@@ -179,6 +179,34 @@
         
       </header>
     
+	
+	<!-- 目录内容 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap和Hashtable的区别"><span class="toc-number">1.</span> <span class="toc-text">HashMap和Hashtable的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashSet和HashMap、Hashtable的区别"><span class="toc-number">2.</span> <span class="toc-text">HashSet和HashMap、Hashtable的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap和Hashtable的实现原理"><span class="toc-number">3.</span> <span class="toc-text">HashMap和Hashtable的实现原理</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      
+<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="HashMap和Hashtable的区别"><a href="#HashMap和Hashtable的区别" class="headerlink" title="HashMap和Hashtable的区别"></a>HashMap和Hashtable的区别</h2><p><strong>1.俩者的区别主要在于Hashtable是线程安全，HashMap则非线程安全。</strong><br>Hashtable的实现方法都添加了synchronized关键字来确保线程同步，因此性能相对来说高些，无特殊要求一般使用HashMap。在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程安全的集合（Collections.synchronizedMap()实现原理是Collections定义了一个SynchronizedMap的内部类，这个类实现了Map接口，在调用方法时使用synchronized来保证线程同步,当然了实际上操作的还是我们传入的HashMap实例，简单的说就是Collections.synchronizedMap()方法帮我们在操作HashMap时自动添加了synchronized来实现线程同步，类似的其它Collections.synchronizedXX方法也是类似原理）</p>
@@ -350,6 +378,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap和Hashtable的区别"><span class="toc-number">1.</span> <span class="toc-text">HashMap和Hashtable的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashSet和HashMap、Hashtable的区别"><span class="toc-number">2.</span> <span class="toc-text">HashSet和HashMap、Hashtable的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap和Hashtable的实现原理"><span class="toc-number">3.</span> <span class="toc-text">HashMap和Hashtable的实现原理</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
