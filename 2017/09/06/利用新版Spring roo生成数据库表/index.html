@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>利用新版Spring roo生成数据库表 | BOOM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="源代码：https://github.com/sunuanwuhou/Northwind  一.准备工具1.Spring Roo最新版，官方下载地址：http://projects.spring.io/spring-roo/#download-widget 2.maven 版本在3.0以上：官方下载地址：https://maven.apache.org/download.cgi 3.数据库 我是M">
+  <meta name="description" content="源代码：https://github.com/sunuanwuhou/Northwind  ##一.准备工具1.Spring Roo最新版，官方下载地址：http://projects.spring.io/spring-roo/#download-widget 2.maven 版本在3.0以上：官方下载地址：https://maven.apache.org/download.cgi 3.jdk版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用新版Spring roo生成数据库表">
 <meta property="og:url" content="http://yoursite.com/2017/09/06/利用新版Spring roo生成数据库表/index.html">
 <meta property="og:site_name" content="BOOM">
-<meta property="og:description" content="源代码：https://github.com/sunuanwuhou/Northwind  一.准备工具1.Spring Roo最新版，官方下载地址：http://projects.spring.io/spring-roo/#download-widget 2.maven 版本在3.0以上：官方下载地址：https://maven.apache.org/download.cgi 3.数据库 我是M">
+<meta property="og:description" content="源代码：https://github.com/sunuanwuhou/Northwind  ##一.准备工具1.Spring Roo最新版，官方下载地址：http://projects.spring.io/spring-roo/#download-widget 2.maven 版本在3.0以上：官方下载地址：https://maven.apache.org/download.cgi 3.jdk版本">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20170830110917542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170830110717521?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170830111021246?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170830111108242?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170830112144596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-09-07T01:15:57.452Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20170908143422522?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-09-11T00:54:22.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用新版Spring roo生成数据库表">
-<meta name="twitter:description" content="源代码：https://github.com/sunuanwuhou/Northwind  一.准备工具1.Spring Roo最新版，官方下载地址：http://projects.spring.io/spring-roo/#download-widget 2.maven 版本在3.0以上：官方下载地址：https://maven.apache.org/download.cgi 3.数据库 我是M">
+<meta name="twitter:description" content="源代码：https://github.com/sunuanwuhou/Northwind  ##一.准备工具1.Spring Roo最新版，官方下载地址：http://projects.spring.io/spring-roo/#download-widget 2.maven 版本在3.0以上：官方下载地址：https://maven.apache.org/download.cgi 3.jdk版本">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170830110917542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="BOOM" type="application/atom+xml">
@@ -173,11 +173,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>源代码：<a href="https://github.com/sunuanwuhou/Northwind" target="_blank" rel="external">https://github.com/sunuanwuhou/Northwind</a> </p>
-<h2 id="一-准备工具"><a href="#一-准备工具" class="headerlink" title="一.准备工具"></a>一.准备工具</h2><p>1.Spring Roo最新版，官方下载地址：<a href="http://projects.spring.io/spring-roo/#download-widget" target="_blank" rel="external">http://projects.spring.io/spring-roo/#download-widget</a></p>
+<p>##一.准备工具<br>1.Spring Roo最新版，官方下载地址：<a href="http://projects.spring.io/spring-roo/#download-widget" target="_blank" rel="external">http://projects.spring.io/spring-roo/#download-widget</a></p>
 <p>2.maven 版本在3.0以上：官方下载地址：<a href="https://maven.apache.org/download.cgi" target="_blank" rel="external">https://maven.apache.org/download.cgi</a></p>
-<p>3.数据库 我是MYSQL，ORACLE 也可以，其他数据库可不可以可以参照官方文档。这是多嘴一句，如要在数据库生成外键，MYSQL的数据引擎要是InonDB。</p>
+<p>3.jdk版本，适用于1.8</p>
+<p>4.数据库 我是MYSQL，ORACLE 也可以，其他数据库可不可以可以参照官方文档。</p>
 <a id="more"></a>
-<h2 id="二-配置生产环境"><a href="#二-配置生产环境" class="headerlink" title="二.配置生产环境"></a>二.配置生产环境</h2><p><strong>1.安装maven</strong></p>
+<p>##二.配置生产环境</p>
+<p><strong>1.安装maven</strong></p>
 <p><img src="http://img.blog.csdn.net/20170830110917542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
 <p><strong>检测是否成功</strong></p>
 <p><img src="http://img.blog.csdn.net/20170830110717521?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
@@ -185,21 +187,24 @@
 <p><img src="http://img.blog.csdn.net/20170830111021246?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
 <p>检测是否安装成功</p>
 <p><img src="http://img.blog.csdn.net/20170830111108242?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<h2 id="三-编写roo文件"><a href="#三-编写roo文件" class="headerlink" title="三.编写roo文件"></a>三.编写roo文件</h2><p>因为roo文件有很多属性，这里就不一一述说了，只给出最简单的例子供大家参考</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//创建maven项目 java8环境下</div><div class="line">project setup --topLevelPackage org.northwind --projectName &quot;Northwind&quot; --java 8 --multimodule STANDARD</div><div class="line">//将对象名称设置为可选</div><div class="line">settings add --name spring.roo.jpa.require.schema-object-name --value false --force</div><div class="line">//连接数据库以及账号密码 </div><div class="line">jpa setup --provider HIBERNATE  --database MYSQL</div><div class="line">//删除系统默认的数据库主机名和端口</div><div class="line">property remove --key spring.datasource.url</div><div class="line">//自定义数据库主机名和端口以及数据库名称以及格式</div><div class="line">property add --key spring.datasource.url --value jdbc:mysql://127.0.0.1:3306/spring?useUnicode=true&amp;characterEncoding=UTF-8</div><div class="line">property add --key spring.datasource.username --value root</div><div class="line">property add --key spring.datasource.password --value root</div><div class="line">//关联 hibernate</div><div class="line">property add --key spring.jpa.properties.hibernate.hbm2ddl.auto --value update</div><div class="line">//允许创建bean</div><div class="line">module focus --moduleName model</div><div class="line"></div><div class="line">//创建实体类，其他创建方式参考官方文档</div><div class="line">entity jpa --class ~.City --readOnly</div><div class="line">field string --fieldName description</div><div class="line">field string --fieldName xiaomin</div><div class="line"></div><div class="line"></div><div class="line">repository jpa --all</div><div class="line">service --all</div><div class="line">web mvc setup</div><div class="line">web mvc controller --all --pathPrefix /api</div></pre></td></tr></table></figure>
-<h2 id="四-编写脚本文件"><a href="#四-编写脚本文件" class="headerlink" title="四.编写脚本文件"></a>四.编写脚本文件</h2><p><img src="http://img.blog.csdn.net/20170830112144596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p><strong>1.clean 目的是为了下次生成项目的时候，清楚之前的残余。</strong></p>
+<p>##三.编写roo文件</p>
+<p>因为roo文件有很多属性，这里就不一一述说了，只给出最简单的例子供大家参考</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">//创建maven项目 java8环境下</div><div class="line">project setup --topLevelPackage org.northwind --projectName &quot;Northwind&quot; --java 8 --multimodule STANDARD</div><div class="line">//将对象名称设置为可选</div><div class="line">settings add --name spring.roo.jpa.require.schema-object-name --value false --force</div><div class="line">//连接数据库以及账号密码 </div><div class="line">jpa setup --provider HIBERNATE  --database MYSQL</div><div class="line">//删除系统默认的数据库主机名和端口</div><div class="line">property remove --key spring.datasource.url</div><div class="line">//自定义数据库ip和端口以及数据库名称以及编码 事先要在相对应的数据库建好表</div><div class="line">property add --key spring.datasource.url --value jdbc:mysql://127.0.0.1:3306/spring?useUnicode=true&amp;characterEncoding=UTF-8</div><div class="line">property add --key spring.datasource.username --value root</div><div class="line">property add --key spring.datasource.password --value root</div><div class="line">//建表的方式  加载hibernate自动更新数据库结构</div><div class="line">property add --key spring.jpa.properties.hibernate.hbm2ddl.auto --value update</div><div class="line">//允许创建bean</div><div class="line">module focus --moduleName model</div><div class="line"></div><div class="line">//创建实体类，其他创建方式参考官方文档</div><div class="line">entity jpa --class ~.City </div><div class="line">field string --fieldName description</div><div class="line">field string --fieldName name</div><div class="line"></div><div class="line">entity jpa --class ~.Country</div><div class="line">field string --fieldName name</div><div class="line">field string --fieldName description</div><div class="line">//关联关系 如果主表为city。从表为country</div><div class="line">focus --class ~.City </div><div class="line">field reference --notNull --type ~.country --fieldName city_county --joinColumnName city --referencedColumnName id --mappedBy City(主表) </div><div class="line">//解释每个字段的意思</div><div class="line">focus --class ~.City(主表) </div><div class="line">field reference </div><div class="line">--notNull（不为空） </div><div class="line">--type ~.country(从表) </div><div class="line">--fieldName city_county(这个可以随表写，是生成在bean中的，但不能重复，建议主表_字表)</div><div class="line">--joinColumnName city_id(这个是从表的外键.可自己之指定名称，建议主表_id) </div><div class="line">--referencedColumnName id（主表的那个字段作为从表的外键，不写默认为id）</div><div class="line">--mappedBy City(主表) </div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">web mvc setup</div></pre></td></tr></table></figure>
+<p>##四.编写脚本文件</p>
+<p><img src="http://img.blog.csdn.net/20170908143422522?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcWl1bWVuZ18xMzE0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p><strong>0.clean 目的是为了下次生成项目的时候，清楚之前的残余。</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">rmdir /s /q .roo</div><div class="line">rmdir /s /q application</div><div class="line">rmdir /s /q integration</div><div class="line">rmdir /s /q model</div><div class="line">rmdir /s /q repository</div><div class="line">rmdir /s /q service-api</div><div class="line">rmdir /s /q service-impl</div><div class="line"></div><div class="line">del log.roo</div><div class="line">del pom.xml</div></pre></td></tr></table></figure>
-<p><strong>2.build 扫描roo文件生成maven项目，此maven项目是以spring boot作为启动项。</strong></p>
+<p><strong>1.build 扫描roo文件生成maven项目，此maven项目是以spring boot作为启动项。</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">roo script --file db.roo</div></pre></td></tr></table></figure>
-<p><strong>3.package 进行打包</strong></p>
+<p><strong>2.package 进行打包</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn package</div></pre></td></tr></table></figure>
 <p>打包后会生成俩个war包，一个是<em>.war，一个是</em>-exec.war。一个适用于windows一个适用于linux。</p>
-<p><strong>4.run 运行jar包</strong></p>
+<p><strong>3.run 运行jar包</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//进入war包所在目录</div><div class="line">cd application\target</div><div class="line">//运行项目</div><div class="line">java -jar application-1.0.0.BUILD-SNAPSHOT-exec.war</div></pre></td></tr></table></figure>
 <p><strong>五.成功运行上面几个脚本后，你可以看到数据库中有新表产生。</strong></p>
 <p>1.可以修改表结构。</p>
 <p>2.可以增加字段，对数据无影响。</p>
+<p>3.以添加在数据的字段，更改roo文件后，无法删除。</p>
 
       
 
